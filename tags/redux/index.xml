@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leidson Cruz</title>
-    <link>https://leidson.com/</link>
-    <description>Recent content on Leidson Cruz</description>
+    <title>Redux on Leidson Cruz</title>
+    <link>https://leidson.com/tags/redux/</link>
+    <description>Recent content in Redux on Leidson Cruz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 May 2019 20:12:49 +0000</lastBuildDate>
     
-	<atom:link href="https://leidson.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://leidson.com/tags/redux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>&lt;p&gt;You need use Web Components in the your application? No you don’t need. I’am totally against from the hype. You should use if only you need. I see some advantages to use if you really need. For example: componentization and your advantages, very small final bundle size and etc.&lt;/p&gt;
 
 &lt;p&gt;In the article I talk about a project we(My team) started at &lt;a href=&#34;https://www.globo.com/&#34;&gt;globo.com&lt;/a&gt;. The project was build &lt;strong&gt;Stories&lt;/strong&gt; like &lt;strong&gt;Instagram&lt;/strong&gt;. We use &lt;a href=&#34;https://github.com/ramon82/zuck.js/&#34;&gt;ZuckJS&lt;/a&gt; for a POC(proof of concept) but we need customize a lot this lib. Was very expensive cost to customize, so i start wrote a Vanilla Javascript Lib and after I transform it to Web Components. You can see &lt;a href=&#34;https://github.com/leidsondias/storiesJSOlder&#34;&gt;here&lt;/a&gt; the vanilla version — branch master.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hello and welcome</title>
-      <link>https://leidson.com/post/hello/</link>
-      <pubDate>Wed, 22 May 2019 17:35:22 +0100</pubDate>
-      
-      <guid>https://leidson.com/post/hello/</guid>
-      <description>&lt;p&gt;Hello everyone, my name is &lt;strong&gt;Leidson Cruz&lt;/strong&gt; and i&amp;rsquo;am &lt;strong&gt;Software Engineer&lt;/strong&gt;. Currently i live on Lisbon - Portugal but i&amp;rsquo;am from João Pessoa - Brazil. I lived on Rio de Janeiro for 4 years before move to Lisbon and was a amazing experience.&lt;/p&gt;</description>
     </item>
     
   </channel>
