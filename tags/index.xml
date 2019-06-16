@@ -6,46 +6,10 @@
     <description>Recent content in Tags on Leidson Cruz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 May 2019 08:05:48 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 May 2019 20:12:49 +0000</lastBuildDate>
     
 	<atom:link href="https://leidson.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Chrome Extension</title>
-      <link>https://leidson.com/tags/chrome-extension/</link>
-      <pubDate>Mon, 27 May 2019 08:05:48 +0000</pubDate>
-      
-      <guid>https://leidson.com/tags/chrome-extension/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://leidson.com/tags/javascript/</link>
-      <pubDate>Mon, 27 May 2019 08:05:48 +0000</pubDate>
-      
-      <guid>https://leidson.com/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Médium</title>
-      <link>https://leidson.com/tags/m%C3%A9dium/</link>
-      <pubDate>Mon, 27 May 2019 08:05:48 +0000</pubDate>
-      
-      <guid>https://leidson.com/tags/m%C3%A9dium/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://leidson.com/tags/python/</link>
-      <pubDate>Mon, 27 May 2019 08:05:48 +0000</pubDate>
-      
-      <guid>https://leidson.com/tags/python/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Event Driven Architecture</title>
@@ -53,6 +17,15 @@
       <pubDate>Wed, 22 May 2019 20:12:49 +0000</pubDate>
       
       <guid>https://leidson.com/tags/event-driven-architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://leidson.com/tags/javascript/</link>
+      <pubDate>Wed, 22 May 2019 20:12:49 +0000</pubDate>
+      
+      <guid>https://leidson.com/tags/javascript/</guid>
       <description></description>
     </item>
     
