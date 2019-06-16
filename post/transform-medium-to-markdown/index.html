@@ -336,14 +336,14 @@
 
 <li><p><em>Content script</em>: executes in an isolated context of the webpage, has access to DOM and has very limited access to Chrome API.</p></li>
 
-<li><p>*chrome.runtime.sendMessage *: sends a message to your background script.
+<li><p><a href="https://developer.chrome.com/apps/runtime#method-sendMessage">chrome.runtime.sendMessage</a>: sends a message to your background script.
 Ex: <code>chrome.runtime.sendMessage({ copy: true })</code></p></li>
 
-<li><p><em>chrome.runtime.onMessage.addListener</em>: Have the responsibility for listening when script receiver any message. You can use on the content and background scripts.</p></li>
+<li><p><a href="https://developer.chrome.com/apps/runtime#event-onMessage">chrome.runtime.onMessage.addListener</a>: Have the responsibility for listening when script receiver any message. You can use on the content and background scripts.</p></li>
 
-<li><p><em>chrome.commands.onCommand.addListener</em>:* *It’s called when any shortcut is fired.</p></li>
+<li><p><a href="https://developer.chrome.com/apps/commands#event-onCommand">chrome.commands.onCommand.addListener</a>: It’s called when any shortcut is fired.</p></li>
 
-<li><p><em>chrome.tabs.sendMessage</em>: Sends a single message into the specified tab.</p></li>
+<li><p><a href="https://developer.chrome.com/extensions/tabs#method-sendMessage">chrome.tabs.sendMessage</a>: Sends a single message into the specified tab.</p></li>
 </ul>
 
 <p>Another approach what I can use is create a server. And every time I create the post, I make a AJAX request for server and it call the transformer script.
@@ -359,8 +359,6 @@ I created the server using docker for run in background, but for run the script 
       <ul class="post-tags">
         
           <li><a href="https://leidson.com/tags/javascript"><span class="tag">JavaScript</span></a></li>
-        
-          <li><a href="https://leidson.com/tags/m%C3%A9dium"><span class="tag">Médium</span></a></li>
         
           <li><a href="https://leidson.com/tags/python"><span class="tag">Python</span></a></li>
         
