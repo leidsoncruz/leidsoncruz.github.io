@@ -3,54 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://leidson.com/tags/chrome-extension/</loc>
-    <lastmod>2019-05-27T08:05:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/tags/javascript/</loc>
-    <lastmod>2019-05-27T08:05:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/</loc>
-    <lastmod>2019-05-27T08:05:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/post/</loc>
-    <lastmod>2019-05-27T08:05:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/tags/python/</loc>
-    <lastmod>2019-05-27T08:05:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/tags/</loc>
-    <lastmod>2019-05-27T08:05:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/post/transform-medium-to-markdown/</loc>
-    <lastmod>2019-05-27T08:05:48+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://leidson.com/tags/event-driven-architecture/</loc>
     <lastmod>2019-05-22T20:12:49+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://leidson.com/tags/javascript/</loc>
+    <lastmod>2019-05-22T20:12:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://leidson.com/</loc>
+    <lastmod>2019-05-22T20:12:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://leidson.com/post/</loc>
+    <lastmod>2019-05-22T20:12:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://leidson.com/tags/redux/</loc>
+    <lastmod>2019-05-22T20:12:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://leidson.com/tags/</loc>
     <lastmod>2019-05-22T20:12:49+00:00</lastmod>
     <priority>0</priority>
   </url>
