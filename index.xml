@@ -6,10 +6,21 @@
     <description>Recent content on Leidson Cruz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 May 2019 20:12:49 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 08:05:48 +0000</lastBuildDate>
     
 	<atom:link href="https://leidson.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Transform Medium to Markdown</title>
+      <link>https://leidson.com/post/transform-medium-to-markdown/</link>
+      <pubDate>Mon, 27 May 2019 08:05:48 +0000</pubDate>
+      
+      <guid>https://leidson.com/post/transform-medium-to-markdown/</guid>
+      <description>&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;In the last year(2018), I and my friend &lt;a href=&#34;https://medium.com/@heliocorreia&#34;&gt;heliocorreia&lt;/a&gt; talk about making the personal website and make a post in it. But, I different from him didn’t want to create a blog system for posting. I thought, why not use Medium with as my publication platform and I build a script to migrate from Medium to Markdown?&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Web Components with Redux</title>
