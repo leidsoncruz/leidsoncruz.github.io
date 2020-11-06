@@ -50,7 +50,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.6">
+<meta name="generator" content="Hugo 0.78.1">
 
 
 <link rel="canonical" href="https://leidson.com/post/transform-medium-to-markdown/">
@@ -199,47 +199,31 @@
       <p class="post-meta">@Leidson Cruz · May 27, 2019 · 6 min read</p>
     </header>
     <article class="post-content"><h2 id="motivation">Motivation</h2>
-
 <p>In the last year(2018), I and my friend <a href="https://medium.com/@heliocorreia">heliocorreia</a> talk about making the personal website and make a post in it. But, I different from him didn’t want to create a blog system for posting. I thought, why not use Medium with as my publication platform and I build a script to migrate from Medium to Markdown?</p>
-
-<h2 id="existent-s-libs"><strong>Existent’s Libs</strong></h2>
-
+<h2 id="existents-libs"><strong>Existent’s Libs</strong></h2>
 <p>So, I started to search for Libs with these functionalities. I found a lot of libs, but I most liked from two.</p>
-
 <ul>
-<li><p><a href="https://domchristie.github.io/turndown/">Turndown</a></p></li>
-
-<li><p><a href="https://github.com/xdamman/mediumexporter">Medium exporter</a></p></li>
+<li>
+<p><a href="https://domchristie.github.io/turndown/">Turndown</a></p>
+</li>
+<li>
+<p><a href="https://github.com/xdamman/mediumexporter">Medium exporter</a></p>
+</li>
 </ul>
-
 <p>For me, the Medium Exporter is the better. It is very simple to use and work perfectly.</p>
-
-<h2 id="decide-what-i-m-going-to-use-and-how-i-m-going-to-do-the-script">Decide what I’m going to use and how I’m going to do the script</h2>
-
+<h2 id="decide-what-im-going-to-use-and-how-im-going-to-do-the-script">Decide what I’m going to use and how I’m going to do the script</h2>
 <p>Ok, I found and now I know it’s possible to make what I want. Let’s go start from zero one Lib to transform Medium to Markdown and using stuff I do not use at now with much frequency. For example, Python.</p>
-
 <p>Why Python? I used Python because I like this language and have some time I don’t work with it. It is not because is better or anything else. I like and want to make the new project with it.</p>
-
 <h3 id="test-driven-development"><strong>Test</strong>-<strong>driven development</strong></h3>
-
 <p>Another thing that I used is <a href="https://en.wikipedia.org/wiki/Test-driven_development">TDD</a>. I like this technique but I do not use it every time. It’s a habit that I need to practice. Today I make tests after making the code.</p>
-
 <p>My first reading about TDD was the <a href="http://blog.thiagobelem.net/aprendendo-tdd-ou-desenvolvimento-orientado-a-testes">Thiago Belem post</a>. Later I had the opportunity to take the Industrial Logic course. The course was about TDD and Refactor. It’s a very good course, but what I most liked was the Refactor topic. It’s a good topic for talking about.</p>
-
 <h3 id="paradigm">Paradigm</h3>
-
 <p>Now, I have the language and what technique I will use. What is missing?</p>
-
 <p>The programming paradigm I want to use. I guess the <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a> is most easy to understand. But I don’t need reuse code, extend classes, polymorphism or another thing with OOP give to me.</p>
-
 <p>So, I used <a href="https://en.wikipedia.org/wiki/Functional_programming">Functional programming</a>. What I have on my script are the immutable state and pure functions. To be clear, I prefer OOP. But for me, you must use what your problem needs and not what you want.</p>
-
 <h2 id="challenges"><strong>Challenges</strong></h2>
-
 <p>I needed to remember a lot of things about Python. How to use some methods, etc. But, my main challenge was to add markups into the text without affecting anything.</p>
-
 <p>The Medium post payload after make parser to JSON is some like this:</p>
-
 <pre><code>...
 “paragraphs”: [{
  “name”: “7854”,
@@ -285,74 +269,52 @@
       }]
      },
 ...
-</code></pre>
-
-<p>If I iterate the paragraphs and get the markups and add to the text. The next paragraph with markup will be affected with the previous markup and we will have a problem.</p>
-
+</code></pre><p>If I iterate the paragraphs and get the markups and add to the text. The next paragraph with markup will be affected with the previous markup and we will have a problem.</p>
 <p>One resolution for this problem is saving the number of char on the aux variable. Apply on the copy of the text without touching on the original text.</p>
-
 <p>Another solution is to use aux variable to stop and concatenate the strings. And merge with the rest of the text.</p>
-
 <p>So I talked with my both friends from my company (<a href="https://medium.com/@fabiomatias21">Fábio Matias</a> and <a href="https://medium.com/@dmagro04">Daniel Magro</a>). Both given to me good ideas to add the markups. I merged the ideas to make the below solution.</p>
-
 <p>First, I sort the array of paragraphs with the keys: <strong>start</strong> and <strong>type</strong>.</p>
-
 <pre><code>markups = sorted(paragraph.get('markups'), key=lambda m: (m.get('start'), m.get('type')))
-</code></pre>
-
-<p>Second, I iterate the array checking if it has one more markup into the text and I remove it if it has. I keep only one in the ascendant order. I will go to improve to apply more than one markup. For applying more than one, I need to control the original text and extract the word that I want to change. After, I merge all markups.</p>
-
+</code></pre><p>Second, I iterate the array checking if it has one more markup into the text and I remove it if it has. I keep only one in the ascendant order. I will go to improve to apply more than one markup. For applying more than one, I need to control the original text and extract the word that I want to change. After, I merge all markups.</p>
 <pre><code>markups = [mark for mark in markups if mark.get('start') not in seen and not seen.add(mark.get('start'))][::-1]
-</code></pre>
-
-<p>For last I reverse the array <code>[::-1]</code>. Because when I will add the markups, I do not make any changes for the firsts markups. How this I not change the text and not need to have the control when I add the markup.</p>
-
+</code></pre><p>For last I reverse the array <code>[::-1]</code>. Because when I will add the markups, I do not make any changes for the firsts markups. How this I not change the text and not need to have the control when I add the markup.</p>
 <h2 id="automatization-process">Automatization process</h2>
-
 <p>I didn’t want to keep one <a href="https://en.wikipedia.org/wiki/Cron">Cron</a> running because I don’t know what with the frequency I will write the posts. So instead of using an active job for this, I want to use the reactive job. Whenever I publish the post on Medium, create a new post on my website.</p>
-
 <h3 id="chrome-extension">Chrome extension</h3>
-
 <p>My idea is creating a chrome extension. When I am on the Medium page, it listening when I publish the article and trigger my script.</p>
-
 <p>I had some difficulty to make the chrome extension call the python or bash script. I didn’t find any example for executing scripts on the macOS. Just for the Windows OS.</p>
-
 <p>I got it open the calculator, Spotify apps. But whenever I tried to open the terminal, it did open and closes instantly.</p>
-
 <p>I did spend a lot of time trying to make the extension calls directly the script. I did not have the expected result that I did want. So, I decided to create a shortcut to copy the active URL and merge with my full instruction to run the python script.</p>
-
 <p>I hope in the future I improve the extension for call the python script and I don’t need execute on the terminal.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>I never had read about to make a Chrome extension. In general, I don’t like the google documentation. But, the documentation about the extension is OK.</p>
-
-<p>I liked the challenge to create the extension, and understand how the <a href="https://developer.chrome.com/apps/nativeMessaging">NativeMessaging</a> works. The difference between <code>background</code> and <code>content</code>scripts.</p>
-
+<p>I liked the challenge to create the extension, and understand how the <a href="https://developer.chrome.com/apps/nativeMessaging">NativeMessaging</a> works. The difference between <code>background</code> and <code>content </code>scripts.</p>
 <p>So what I think is important you know about creating a Chrome extension:</p>
-
 <ul>
-<li><p><em>Background script</em>: It’s your central event. Has the access for all Chrome API.</p></li>
-
-<li><p><em>Content script</em>: executes in an isolated context of the webpage, has access to DOM and has very limited access to Chrome API.</p></li>
-
-<li><p><a href="https://developer.chrome.com/apps/runtime#method-sendMessage">chrome.runtime.sendMessage</a> : sends a message to your background script.
-Ex: <code>chrome.runtime.sendMessage({ copy: true })</code></p></li>
-
-<li><p><a href="https://developer.chrome.com/apps/runtime#event-onMessage">chrome.runtime.onMessage.addListener</a>: Have the responsibility for listening when script receiver any message. You can use on the content and background scripts.</p></li>
-
-<li><p><a href="https://developer.chrome.com/apps/commands#event-onCommand">chrome.commands.onCommand.addListener</a>: It’s called when any shortcut is fired.</p></li>
-
-<li><p><a href="https://developer.chrome.com/extensions/tabs#method-sendMessage">chrome.tabs.sendMessage</a>: Sends a single message into the specified tab.</p></li>
+<li>
+<p><em>Background script</em>: It’s your central event. Has the access for all Chrome API.</p>
+</li>
+<li>
+<p><em>Content script</em>: executes in an isolated context of the webpage, has access to DOM and has very limited access to Chrome API.</p>
+</li>
+<li>
+<p><a href="https://developer.chrome.com/apps/runtime#method-sendMessage">chrome.runtime.sendMessage</a> : sends a message to your background script.
+Ex: <code>chrome.runtime.sendMessage({ copy: true })</code></p>
+</li>
+<li>
+<p><a href="https://developer.chrome.com/apps/runtime#event-onMessage">chrome.runtime.onMessage.addListener</a>: Have the responsibility for listening when script receiver any message. You can use on the content and background scripts.</p>
+</li>
+<li>
+<p><a href="https://developer.chrome.com/apps/commands#event-onCommand">chrome.commands.onCommand.addListener</a>: It’s called when any shortcut is fired.</p>
+</li>
+<li>
+<p><a href="https://developer.chrome.com/extensions/tabs#method-sendMessage">chrome.tabs.sendMessage</a>: Sends a single message into the specified tab.</p>
+</li>
 </ul>
-
 <p>Another approach that I can use is creating a server. And every time I create the post, I make an AJAX request for the server and it calls the transformer script.
 I created the server using docker for runs in the background, but for run the script and make the deploy I need dockerize all my project. So, I’ll leave to do this later. But when I will do, I will update the GitHub.</p>
-
 <p>You can access the chrome extension code <a href="https://github.com/leidsondias/site/tree/master/scripts/chrome_extension">here</a> and the python code <a href="https://github.com/leidsondias/site/tree/master/scripts/python">here</a>.</p>
-
 <p>You can see the result for transform script into the <a href="https://leidson.com/">https://leidson.com/</a>, just the Hello post doesn’t use the transform script. All others use.</p>
-
 <p>The original post is <a href="https://medium.com/@leidsoncruz/transform-medium-to-markdown-1e0cc216843f">https://medium.com/@leidsoncruz/transform-medium-to-markdown-1e0cc216843f</a></p></article>
     <footer class="post-footer">
       
@@ -367,7 +329,7 @@ I created the server using docker for runs in the background, but for run the sc
       </ul>
       
       <p class="post-copyright">
-        
+        This post was published <strong>529</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
       </p>
     </footer>
     
@@ -376,7 +338,7 @@ I created the server using docker for runs in the background, but for run the sc
   </section>
   
 <footer class="site-footer">
-  <p>© 2017-2019 Leidson Cruz</p>
+  <p>© 2017-2020 Leidson Cruz</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
   
 </footer>
