@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://leidson.com/post/how-to-use-apply-bind-call-in-javascript/</loc>
+    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://leidson.com/tags/javascript/</loc>
+    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://leidson.com/</loc>
+    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://leidson.com/post/</loc>
+    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://leidson.com/tags/</loc>
+    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://leidson.com/tags/code-review/</loc>
     <lastmod>2020-10-25T22:33:46+00:00</lastmod>
   </url>
@@ -18,27 +43,7 @@
   </url>
   
   <url>
-    <loc>https://leidson.com/</loc>
-    <lastmod>2020-10-25T22:33:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/post/</loc>
-    <lastmod>2020-10-25T22:33:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/tags/</loc>
-    <lastmod>2020-10-25T22:33:46+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://leidson.com/tags/chrome-extension/</loc>
-    <lastmod>2019-05-27T08:05:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://leidson.com/tags/javascript/</loc>
     <lastmod>2019-05-27T08:05:48+00:00</lastmod>
   </url>
   
