@@ -6,7 +6,17 @@
     <description>Recent content in JavaScript on Leidson Cruz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Nov 2020 19:00:04 +0000</lastBuildDate><atom:link href="https://leidson.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 18:19:09 +0000</lastBuildDate><atom:link href="https://leidson.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript: Context vs Scope</title>
+      <link>https://leidson.com/post/javascript-context-vs-scope/</link>
+      <pubDate>Fri, 13 Nov 2020 18:19:09 +0000</pubDate>
+      
+      <guid>https://leidson.com/post/javascript-context-vs-scope/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/8192/0*hcBr_-BUKv8qjPA1&#34; alt=&#34;Photo by Irvan Smith on Unsplash&#34;&gt;&lt;em&gt;Photo by &lt;a href=&#34;https://unsplash.com/@mr_vero?utm_source=medium&amp;amp;utm_medium=referral&#34;&gt;Irvan Smith&lt;/a&gt; on &lt;a href=&#34;https://unsplash.com?utm_source=medium&amp;amp;utm_medium=referral&#34;&gt;Unsplash&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In the next posts, I’ll talk about the &lt;strong&gt;closures&lt;/strong&gt; and &lt;strong&gt;lexical environment&lt;/strong&gt; . To be easier to understand both. I’ll give more knowledge about context/scope and the difference between them.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>How to use apply, bind &amp; call in Javascript</title>
       <link>https://leidson.com/post/how-to-use-apply-bind-call-in-javascript/</link>

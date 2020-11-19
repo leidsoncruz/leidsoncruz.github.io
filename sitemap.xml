@@ -3,27 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://leidson.com/post/how-to-use-apply-bind-call-in-javascript/</loc>
-    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+    <loc>https://leidson.com/tags/javascript/</loc>
+    <lastmod>2020-11-13T18:19:09+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://leidson.com/tags/javascript/</loc>
-    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+    <loc>https://leidson.com/post/javascript-context-vs-scope/</loc>
+    <lastmod>2020-11-13T18:19:09+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://leidson.com/</loc>
-    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+    <lastmod>2020-11-13T18:19:09+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://leidson.com/post/</loc>
-    <lastmod>2020-11-08T19:00:04+00:00</lastmod>
+    <lastmod>2020-11-13T18:19:09+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://leidson.com/tags/</loc>
+    <lastmod>2020-11-13T18:19:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://leidson.com/post/how-to-use-apply-bind-call-in-javascript/</loc>
     <lastmod>2020-11-08T19:00:04+00:00</lastmod>
   </url>
   
