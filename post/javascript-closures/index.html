@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Hello and welcome</title>
+  <title>Javascript: Closures</title>
 
   
   
@@ -26,25 +26,25 @@
 
   
   
-  <meta name="description" content="Hello everyone, my name is Leidson Cruz and i&amp;rsquo;am Software Engineer. Currently i live on Lisbon - Portugal but i&amp;rsquo;am from João Pessoa - Brazil. I lived on Rio de Janeiro for 4 years before move to Lisbon and was a amazing experience.
-">
+  <meta name="description" content="If you don’t know what Context or Scope is, I recommend you to read a previous post talking about Context VS Scope.
+What Closure is?">
 
   
   
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gohugoio">
-    <meta name="twitter:title" content="Hello and welcome">
-    <meta name="twitter:description" content="Hello everyone, my name is Leidson Cruz and i&amp;rsquo;am Software Engineer. Currently i live on Lisbon - Portugal but i&amp;rsquo;am from João Pessoa - Brazil. I lived on Rio de Janeiro for 4 years before move to Lisbon and was a amazing experience.
-">
+    <meta name="twitter:title" content="Javascript: Closures">
+    <meta name="twitter:description" content="If you don’t know what Context or Scope is, I recommend you to read a previous post talking about Context VS Scope.
+What Closure is?">
     <meta name="twitter:image" content="/images/avatar.jpg">
   
 
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Hello and welcome">
-  <meta property="og:description" content="Hello everyone, my name is Leidson Cruz and i&amp;rsquo;am Software Engineer. Currently i live on Lisbon - Portugal but i&amp;rsquo;am from João Pessoa - Brazil. I lived on Rio de Janeiro for 4 years before move to Lisbon and was a amazing experience.
-">
-  <meta property="og:url" content="https://leidson.com/post/hello/">
+  <meta property="og:title" content="Javascript: Closures">
+  <meta property="og:description" content="If you don’t know what Context or Scope is, I recommend you to read a previous post talking about Context VS Scope.
+What Closure is?">
+  <meta property="og:url" content="https://leidson.com/post/javascript-closures/">
   <meta property="og:image" content="/images/avatar.jpg">
 
 
@@ -53,7 +53,7 @@
 <meta name="generator" content="Hugo 0.78.1">
 
 
-<link rel="canonical" href="https://leidson.com/post/hello/">
+<link rel="canonical" href="https://leidson.com/post/javascript-closures/">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -195,23 +195,97 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Hello and welcome</h1>
-      <p class="post-meta">@Leidson Cruz · May 22, 2019 · 1 min read</p>
+      <h1 class="post-title">Javascript: Closures</h1>
+      <p class="post-meta">@Leidson Cruz · Dec 1, 2020 · 4 min read</p>
     </header>
-    <article class="post-content"><p>Hello everyone, my name is <strong>Leidson Cruz</strong> and i&rsquo;am <strong>Software Engineer</strong>. Currently i live on Lisbon - Portugal but i&rsquo;am from João Pessoa - Brazil. I lived on Rio de Janeiro for 4 years before move to Lisbon and was a amazing experience.</p>
-<p>I will go to try every week make a new post talking about technology, but it&rsquo;s possible you found post about living on another places and about FIFA game too.</p>
-<p>I will use this for training my English too, and this is my  main goal. Training and learn English, so if you see anything wrong talk to me for i try learning.</p>
-<p>I will use <a href="https://medium.com">medium</a> as my publication platform and i will create a script for reading the publications and generate posts here.</p>
-<p>What was used and will use on this site is:</p>
-<ul>
-<li><a href="http://gohugo.io">hugo</a> for generate statics</li>
-<li><a href="https://github.com/laozhu/hugo-nuo">hugo-nuo</a> for theme</li>
-<li><a href="https://www.python.org/">python</a> for scripts</li>
-</ul></article>
+    <article class="post-content"><p>If you don’t know what <strong>Context</strong> or <strong>Scope</strong> is, I recommend you to read a previous <a href="https://leidson.com/post/javascript-context-vs-scope/">post</a> talking about <a href="https://leidson.com/post/javascript-context-vs-scope/">Context VS Scope</a>.</p>
+<h3 id="what-closure-is">What Closure is?</h3>
+<p>It is very simple to understand what Closure is. It is functionality to access variables from other Scope, even if the function is pop off from the call stack.</p>
+<p>See the example:</p>
+<pre><code>const closureExample = () =&gt; {
+ const name = &quot;Leidson&quot;;
+  
+  return () =&gt; {
+   return `Hi ${name}`;
+  }
+};
+</code></pre><pre><code>const sayHi = closureExample();//this line, removes the closureExample from the call stack
+</code></pre><pre><code>console.log(sayHi()); //But, we still have the name variable in memory and the result of this execution is: Hi Leidson
+</code></pre><p>How we already saw in the post about context, every time that a function is executed, it creates an execution context. After the function returns, it pops off from the call stack, and the <strong>garbage collector</strong> cleans variables and references. But, in this case, the garbage collector sees: that’s a closure, I need to keep it in the memory because it’ll use after.</p>
+<p>The place name’s of where the variable is kept in memory is <strong>Closure Box</strong> . So, instead of the function goes to the parent scope, it goes to the Closure Box and gets the values.</p>
+<p><strong>An important note</strong> : Closure always <strong>returns</strong> <strong>a</strong> <strong>function</strong> . It is a combination of Function and Lexical Environment (I’ll talk in the next posts about it).</p>
+<blockquote>
+<p>Ok, why closures are interesting or powerful?</p>
+</blockquote>
+<p>Imagine a heavy code, for example, a big returned data from API. You need to get a specified index from this data. So, probably you’ll have a code like this:</p>
+<pre><code>const fetchData = () =&gt; {
+ console.log(&quot;fetch new data!&quot;)
+ return Array.from({length: 99999}, () =&gt; Math.floor(Math.random() * 99999));
+}
+</code></pre><pre><code>const getItem = (index) =&gt; {
+ const data = fetchData();
+  
+ return data[index];
+}
+</code></pre><pre><code>console.log(getItem(1)); //&quot;fetch new data!&quot; &amp; number
+console.log(getItem(12));//&quot;fetch new data!&quot; &amp; number
+console.log(getItem(3)); //&quot;fetch new data!&quot; &amp; number
+</code></pre><p>So, every time that you running the <code>getItem</code>, the <code>fetchData</code> will be running too. Can you imagine how big is it? Now, can you imagine if, instead of fetching data, you’ll have a very heavy operation, how much performance you’ll lose? So, to avoid this, we can use Closures:</p>
+<pre><code>const fetchData = () =&gt; {
+ console.log(&quot;fetch new data!&quot;)
+ return Array.from({length: 99999}, () =&gt; Math.floor(Math.random() * 99999));
+}
+</code></pre><pre><code>const getItemUsingClosure = () =&gt; {
+ const data = fetchData();
+</code></pre><pre><code> return (index) =&gt; data[index];
+}
+</code></pre><pre><code>const getItemClosure = getItemUsingClosure(); //&quot;fetch new data!&quot;
+
+</code></pre><pre><code>console.log(getItemClosure(1)); //number
+console.log(getItemClosure(12));//number
+console.log(getItemClosure(3));//number
+</code></pre><p>What does this code do? When we assign the <code>getItemClosure</code> in a variable, the data variable goes to the <strong>Closure box</strong> . So, every time that you call the <code>getItemClosure</code>, it goes to the Closure box to get the data value instead of needs to call the fetch data again.</p>
+<p>We could have a lot of code after the getItemClosure assigned, and the data value would still be kept in memory, ready to be used when we needed it. For example:</p>
+<pre><code>const fetchData = () =&gt; {
+ console.log(&quot;fetch new data!&quot;)
+ return Array.from({length: 99999}, () =&gt; Math.floor(Math.random() * 99999));
+}
+</code></pre><pre><code>const getItemUsingClosure = () =&gt; {
+ const data = fetchData();
+</code></pre><pre><code>return (index) =&gt; data[index];
+}
+</code></pre><pre><code>const getItemClosure = getItemUsingClosure(); //&quot;fetch new data!&quot;
+</code></pre><pre><code>//DO A LOT OF THINGS, AFTER 1000 LINES:
+</code></pre><pre><code>console.log(getItemClosure(1)); //number
+console.log(getItemClosure(12));//number
+console.log(getItemClosure(3));//number
+</code></pre><pre><code>//Got the same result
+</code></pre><p>We can reuse the example from the post: <a href="https://leidson.com/post/how-to-use-apply-bind-call-in-javascript/">How to use apply, bind &amp; call</a>. Transforming the bind example to use Closure, we can have this:</p>
+<pre><code>const multiply = (a) =&gt; {
+  return (b) =&gt; a * b; 
+}
+</code></pre><pre><code>//another way to write the multiply function:
+//const multiply = (a) =&gt; (b) =&gt; a * b;
+</code></pre><pre><code>const multiplyByTwo = multiply(2);
+const multiplyByThree = multiply(3);
+</code></pre><pre><code>console.log(multiplyByTwo(4)); //8
+console.log(multiplyByThree(4));//12
+</code></pre><p>Well, I hope you enjoy the post and understand the power of Closures. If you have doubts, you can send a message or comment. I’ll be glad to talk and help you.</p>
+<p>The original post is <a href="https://medium.com/@leidson/javascript-closures-629ecd65d7b4">https://medium.com/@leidson/javascript-closures-629ecd65d7b4</a></p></article>
     <footer class="post-footer">
       
+      <ul class="post-tags">
+        
+          <li><a href="https://leidson.com/tags/javascript"><span class="tag">JavaScript</span></a></li>
+        
+          <li><a href="https://leidson.com/tags/closures-functions"><span class="tag">Closures Functions</span></a></li>
+        
+          <li><a href="https://leidson.com/tags/javascript-tips"><span class="tag">Javascript Tips</span></a></li>
+        
+      </ul>
+      
       <p class="post-copyright">
-        This post was published <strong>560</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+        
       </p>
     </footer>
     
