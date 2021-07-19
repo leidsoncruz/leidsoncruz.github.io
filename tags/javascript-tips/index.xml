@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript Tips on Leidson Cruz</title>
-    <link>https://leidson.com/tags/javascript-tips/</link>
+    <link>https://leidsondias.github.io/tags/javascript-tips/</link>
     <description>Recent content in Javascript Tips on Leidson Cruz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2020 20:35:53 +0000</lastBuildDate><atom:link href="https://leidson.com/tags/javascript-tips/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2020 20:35:53 +0000</lastBuildDate><atom:link href="https://leidsondias.github.io/tags/javascript-tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Javascript: Closures</title>
-      <link>https://leidson.com/post/javascript-closures/</link>
+      <link>https://leidsondias.github.io/post/javascript-closures/</link>
       <pubDate>Tue, 01 Dec 2020 20:35:53 +0000</pubDate>
       
-      <guid>https://leidson.com/post/javascript-closures/</guid>
-      <description>&lt;p&gt;If you don’t know what &lt;strong&gt;Context&lt;/strong&gt; or &lt;strong&gt;Scope&lt;/strong&gt; is, I recommend you to read a previous &lt;a href=&#34;https://leidson.com/post/javascript-context-vs-scope/&#34;&gt;post&lt;/a&gt; talking about &lt;a href=&#34;https://leidson.com/post/javascript-context-vs-scope/&#34;&gt;Context VS Scope&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://leidsondias.github.io/post/javascript-closures/</guid>
+      <description>&lt;p&gt;If you don’t know what &lt;strong&gt;Context&lt;/strong&gt; or &lt;strong&gt;Scope&lt;/strong&gt; is, I recommend you to read a previous &lt;a href=&#34;https://leidsondias.github.io/post/javascript-context-vs-scope/&#34;&gt;post&lt;/a&gt; talking about &lt;a href=&#34;https://leidsondias.github.io/post/javascript-context-vs-scope/&#34;&gt;Context VS Scope&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;what-closure-is&#34;&gt;What Closure is?&lt;/h3&gt;</description>
     </item>
     

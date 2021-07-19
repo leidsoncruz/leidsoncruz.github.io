@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Médium on Leidson Cruz</title>
-    <link>https://leidson.com/tags/m%C3%A9dium/</link>
+    <link>https://leidsondias.github.io/tags/m%C3%A9dium/</link>
     <description>Recent content in Médium on Leidson Cruz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 May 2019 08:05:48 +0000</lastBuildDate>
     
-	<atom:link href="https://leidson.com/tags/m%C3%A9dium/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://leidsondias.github.io/tags/m%C3%A9dium/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Transform Medium to Markdown</title>
-      <link>https://leidson.com/post/transform-medium-to-markdown/</link>
+      <link>https://leidsondias.github.io/post/transform-medium-to-markdown/</link>
       <pubDate>Mon, 27 May 2019 08:05:48 +0000</pubDate>
       
-      <guid>https://leidson.com/post/transform-medium-to-markdown/</guid>
+      <guid>https://leidsondias.github.io/post/transform-medium-to-markdown/</guid>
       <description>&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
 
 &lt;p&gt;In the last year(2018), I and my friend &lt;a href=&#34;https://medium.com/@heliocorreia&#34;&gt;heliocorreia&lt;/a&gt; talk about make the personal website and make post on it. But, I different from him didn’t want create one blog system for post. I thinked, why not use Medium with as my publication platform and I build a script to migrate from Medium to Markdown?&lt;/p&gt;</description>
